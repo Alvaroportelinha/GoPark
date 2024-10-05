@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html"><img src="img/logo_cosap_1.png" alt="Logo" class="logo"></a>
+            <ul class="nav-list">
+                <li><a href="registros.html">Registros</a></li>
+                <li><a href="gestão.html">Gestão</a></li>
+                <li><a href="perfil.html">Perfis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h5>Sistema de Gestão de Carros por Marca</h5>
+
+        <!-- Formulário de cadastro de carro -->
+        <form id="formCarro">
+            <input type="text" id="inputNome" placeholder="Nome do Utente">
+            <select id="inputMarca">
+                <!-- Opções de marcas -->
+                <option value="audi">Audi</option>
+                <option value="bmw">BMW</option>
+                <!-- Outras marcas... -->
+            </select>
+            <input type="text" id="inputModelo" placeholder="Modelo do carro">
+            <input type="text" id="inputMatricula" placeholder="Matrícula">
+            <input type="text" id="inputCor" placeholder="Cor do carro">
+            <input type="text" id="inputTelemovel" placeholder="Número de Telemóvel">
+            <input type="email" id="inputEmail" placeholder="Email do proprietário">
+            <button type="button" onclick="adicionarCarro()">Adicionar</button>
+        </form>
+
+        <!-- Tabela onde os carros serão exibidos -->
+        <table id="tabelaCarros">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Matrícula</th>
+                    <th>Cor</th>
+                    <th>Telemóvel</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaBody">
+                <!-- As linhas serão adicionadas aqui -->
+            </tbody>
+        </table>
+
+        <!-- Seção de Utentes -->
+        <h5>Lista de Utentes</h5>
+        <table id="tabelaUtentes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Matrícula</th>
+                    <th>Cor</th>
+                    <th>Telemóvel</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaUtentesBody">
+                <!-- As linhas dos utentes serão exibidas aqui -->
+            </tbody>
+        </table>
+        <button onclick="exibirUtentes()">Exibir Utentes</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+/* Estilo do header */
+header {
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 1px 2px 1px #9e9b9b63;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    padding: 30px;
+    gap: 10PX;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list a {
+    color: rgb(48, 48, 48);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.nav-list a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Estilo geral */
+body {
+    text-transform: uppercase;
+    padding-top: 60px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Centralização e sombra suave para tabelas */
+table {
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%; /* Adiciona largura total */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    text-transform: none;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+}
+
+/* Estilo dos botões */
+button {
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    gap: 6px;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}
+
+/* Marcas de carros com sombras suaves */
+#car-brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.brand-icon {
+    width: 50px;
+    height: auto;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.brand-icon:hover {
+    transform: scale(1.5);
+}
+
+/* Sobras suaves e bordas arredondadas nas caixas de input e tabelas */
+input[type="datetime-local"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 0 1px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-list {
+        gap: 2px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .nav-list {
+        flex-direction: initial;
+        align-items: flex-start;
+    }
+
+    .nav-list li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .brand-icon {
+        width: 40px;
+        margin: 0 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 60px;
+    }
+
+    button {
+        padding: 6px 12px;
+    }
+
+    .brand-icon {
+        width: 30px;
+    }
+
+    input[type="datetime-local"] {
+        width: 100%;
+    }
+    .tab{
+        size: 40px;
+    }
+}
+
