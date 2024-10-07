@@ -215,4 +215,66 @@ input[type="datetime-local"]:focus {
         size: 40px;
     }
 }
+/* Ajuste para telas menores */
+@media (max-width: 660px) {
+    /* Redução de tamanho do logo */
+    .logo {
+        width: 50px;
+    }
 
+    /* Ajuste do tamanho dos botões */
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Ajustes nas colunas da tabela */
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Inputs ocupando 100% da largura para melhor usabilidade em telas pequenas */
+    input[type="text"], input[type="email"], input[type="datetime-local"] {
+        width: 100%;
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    /* Ícones de marcas de carros menores */
+    .brand-icon {
+        width: 25px;
+        margin: 0 5px;
+    }
+
+    /* Centralização da tabela e ajustes de margem */
+    table {
+        margin: 10px auto;
+    }
+
+    /* Ajuste do espaço de navegação */
+    .navbar {
+        padding: 10px;
+    }
+
+    /* Ajuste da lista de navegação para layout vertical */
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-list li {
+        margin-bottom: 5px;
+    }
+
+    /* Ocultar colunas menos importantes em telas muito pequenas */
+    table td:nth-child(3), /* Coluna modelo */
+    table td:nth-child(6), /* Coluna telemóvel */
+    table td:nth-child(7)  /* Coluna email */ {
+        display: none;
+    }
+}

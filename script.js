@@ -268,7 +268,7 @@ function exibirUtentes() {
             <td>${carro.cor}</td>
             <td>${carro.telemovel || '-'}</td>
             <td>${carro.email || '-'}</td>
-            <td>
+           
                 <button class="btn-eliminar" data-marca="${carro.marcaOriginal}" data-matricula="${carro.matricula}">Eliminar</button>
             </td>
         `;
