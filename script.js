@@ -311,3 +311,20 @@ function eliminarUtente(marca, matricula) {
         exibirUtentes();
     }
 }
+// Função para pesquisar utentes por nome ou matrícula
+function pesquisarUtente() {
+    const input = document.getElementById('pesquisarInput').value.toLowerCase();
+    const linhas = document.querySelectorAll('#tabelaUtentesBody tr');
+    
+    linhas.forEach(linha => {
+        const nome = linha.querySelector('td:nth-child(1)').textContent.toLowerCase();
+        const matricula = linha.querySelector('td:nth-child(4)').textContent.toLowerCase();
+
+        // Verifica se o nome ou a matrícula correspondem ao que foi digitado
+        if (nome.includes(input) || matricula.includes(input)) {
+            linha.style.display = ''; // Exibe a linha
+        } else {
+            linha.style.display = 'none'; // Oculta a linha
+        }
+    });
+}

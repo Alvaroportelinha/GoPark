@@ -147,54 +147,52 @@ input[type="datetime-local"]:focus {
     border-color: #007bff;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
-
-@media (max-width: 240px) {
-    body {
-        font-size: 12px; /* Reduz o tamanho da fonte para caber na tela menor */
-    }
-
-    .navbar {
-        padding: 0 5px;
-        flex-direction: column; /* Alinhar itens da navbar verticalmente */
-    }
-
+/* Ajustes para telas menores, até 6 polegadas (480px) */
+@media (max-width: 480px) {
+    /* Ajustando logo e navegação */
     .logo {
-        width: 40px; /* Reduzir o tamanho do logo */
+        width: 50px;
+        height: auto;
     }
 
     .nav-list {
+        display: flex;
         flex-direction: column;
         gap: 5px;
-        padding: 0;
     }
 
-    .nav-list a {
-        font-size: 12px;
-        padding: 5px 10px; /* Menor espaçamento nos links da navbar */
-    }
-
+    /* Estilo da tabela e inputs */
     table {
-        font-size: 10px; /* Ajuste o tamanho da fonte da tabela */
-        width: 100%; /* Certifique-se de que a tabela ocupe 100% da largura */
+        font-size: 12px; /* Reduzindo o tamanho do texto */
     }
 
     th, td {
-        padding: 5px; /* Reduzir o espaçamento das células da tabela */
+        padding: 5px; /* Reduzindo o espaçamento entre células */
     }
 
+    input[type="text"], input[type="email"], input[type="datetime-local"] {
+        width: 100%;
+        font-size: 12px; /* Ajustando tamanho do input */
+    }
+
+    /* Estilizando os botões */
     button {
-        padding: 4px 8px; /* Reduzir tamanho dos botões */
-        font-size: 10px; /* Reduz o tamanho da fonte dos botões */
+        padding: 5px 10px;
+        font-size: 12px;
     }
 
-    input[type="datetime-local"] {
-        font-size: 10px;
-        padding: 3px;
-        width: 100%; /* Garantir que os inputs preencham a tela */
-    }
-
+    /* Ícones de marca menores */
     .brand-icon {
-        width: 20px; /* Diminuir ícones de marcas */
+        width: 15px;
         margin: 0 5px;
+    }
+
+    /* Ajustes adicionais para elementos */
+    .navbar {
+        padding: 0 5px;
+    }
+
+    .nav-list a {
+        font-size: 14px;
     }
 }
