@@ -7,7 +7,70 @@
     <title>Gestão</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+ 
+    .container {
+        max-width: 900px;
+        margin: 20px auto;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+ 
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="tel"], input[type="email"], input[type="time"] {
+        width: 50%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        grid-column: span 2;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0c6712;
+    }
+
+    table {
+        width: 70%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 <body>
     <header>
         <nav class="navbar">
@@ -15,10 +78,114 @@
             <ul class="nav-list">
                 <li><a href="registros.html">Registros</a></li>
                 <li><a href="gestão.html">Gestão</a></li>
-                <li><a href="visitante.html">visitante</a></li>
+                <li><a href="visitante.html">Visitante</a></li>
             </ul>
         </nav>
     </header>
     
+    <main>
+        <h1>Registro de Visitantes do Parque</h1>
+        
+        <!-- Formulário para registro de visitantes -->
+        <form id="formVisitante">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Nome" required><br>
+
+            <label for="marcaVeiculo">Marca do Veículo:</label>
+            <input type="text" id="marcaVeiculo" placeholder="Marca do Veículo" required><br>
+
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" placeholder="Modelo" required><br>
+
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" placeholder="Matrícula" required><br>
+
+            <label for="cor">Cor:</label>
+            <input type="text" id="cor" placeholder="Cor" required><br>
+
+            <label for="telemovel">Telemóvel:</label>
+            <input type="tel" id="telemovel" placeholder="Telemóvel" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" required><br>
+
+            <label for="motivoVisita">Motivo da Visita:</label>
+            <input type="text" id="motivoVisita" placeholder="Motivo da Visita" required><br>
+
+            <label for="horaEntrada">Hora de Entrada:</label>
+            <input type="time" id="horaEntrada" required><br>
+
+            <label for="autorizacao">Autorização:</label>
+            <input type="text" id="autorizacao" placeholder="Autorização" required><br>
+
+            <button type="button" onclick="registrarVisitante()">Registrar</button>
+        </form>
+
+        <!-- Tabela para exibir os visitantes registrados -->
+        <h2>Visitantes Registrados</h2>
+        <table id="tabelaVisitantes" border="1">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca do Veículo</th>
+                    <th>Modelo</th>
+                    <th>Matrícula</th>
+                    <th>Cor</th>
+                    <th>Telemóvel</th>
+                    <th>Email</th>
+                    <th>Motivo da Visita</th>
+                    <th>Hora de Entrada</th>
+                    <th>Autorização</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas serão adicionadas dinamicamente aqui -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // Função para registrar o visitante e adicionar os dados à tabela
+        function registrarVisitante() {
+            // Captura os valores dos inputs
+            const nome = document.getElementById("nome").value;
+            const marcaVeiculo = document.getElementById("marcaVeiculo").value;
+            const modelo = document.getElementById("modelo").value;
+            const matricula = document.getElementById("matricula").value;
+            const cor = document.getElementById("cor").value;
+            const telemovel = document.getElementById("telemovel").value;
+            const email = document.getElementById("email").value;
+            const motivoVisita = document.getElementById("motivoVisita").value;
+            const horaEntrada = document.getElementById("horaEntrada").value;
+            const autorizacao = document.getElementById("autorizacao").value;
+
+            // Verifica se todos os campos estão preenchidos
+            if (!nome || !marcaVeiculo || !modelo || !matricula || !cor || !telemovel || !email || !motivoVisita || !horaEntrada || !autorizacao) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Cria uma nova linha na tabela
+            const tabela = document.getElementById("tabelaVisitantes").getElementsByTagName('tbody')[0];
+            const novaLinha = tabela.insertRow();
+
+            // Adiciona as células com os dados do visitante
+            novaLinha.insertCell(0).innerText = nome;
+            novaLinha.insertCell(1).innerText = marcaVeiculo;
+            novaLinha.insertCell(2).innerText = modelo;
+            novaLinha.insertCell(3).innerText = matricula;
+            novaLinha.insertCell(4).innerText = cor;
+            novaLinha.insertCell(5).innerText = telemovel;
+            novaLinha.insertCell(6).innerText = email;
+            novaLinha.insertCell(7).innerText = motivoVisita;
+            novaLinha.insertCell(8).innerText = horaEntrada;
+            novaLinha.insertCell(9).innerText = autorizacao;
+
+            // Limpa o formulário após o registro
+            document.getElementById("formVisitante").reset();
+        }
+    </script>
+
 </body>
+
 </html>
