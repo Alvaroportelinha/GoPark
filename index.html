@@ -21,8 +21,7 @@
             <ul class="nav-list">
                 <li><a href="registros.html">Registros</a></li>
                 <li><a href="gestão.html">Gestão</a></li>
-                <li><a href="perfil.html">Perfis</a></li>
-            </ul>
+                <li><a href="visitante.html">visitante</a></li>
         </nav>
     </header>
     <main>
@@ -77,7 +76,7 @@
         <!-- Tabela onde os carros são exibidos -->
         <table id="tabelaCarros">
             <thead>
-               
+
             </thead>
             <tbody id="tabelaBody">
                 <!-- Os carros serão inseridos aqui -->
@@ -95,7 +94,7 @@
                     <th>Data e Hora de Entrada</th>
                     <th>Data e Hora de Saída</th>
                     <th>Ações</th>
-               
+
                 </tr>
             </thead>
             <tbody>
@@ -112,18 +111,22 @@
                         <button onclick="setDataHoraSaida(this)">Saiu</button>
                         <input type="datetime-local" class="dataHoraSaidaInput">
                     </td>
-                    <td><button onclick="registrar()">Registrar</button></td>
-                    <td><button onclick="eliminarLinha(this)">Eliminar</button></td>
+                    <td>
+                        <button class="registrar" onclick="registrar()">Registrar</button>
+                    </td>
                 </tr>
+                
+                </tr>
+
             </tbody>
         </table>
 
     </main>
 
     <script src="script.js">
-        
+
     </script>
-    
+
 </body>
 
 </html>
