@@ -8,55 +8,57 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
- 
-    .container {
-        max-width: 900px;
-        margin: 20px auto;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
+   
+h1 {
         text-align: center;
         color: #333;
+        margin-bottom: 20px;
     }
-
+main{
+    display: inline;
+    justify-content: left;
+    align-items: left;    
+    margin: 0px 0px 0px 0px;
+}
     form {
- 
+        gap: 10px;
+        display: inline;
+justify-content: left;
+
+
+        align-items: center;
     }
 
     label {
         font-weight: bold;
         margin-bottom: 5px;
+        text-align: left;
+        margin: 0 0 0 0 0;
     }
 
     input[type="text"], input[type="tel"], input[type="email"], input[type="time"] {
-        width: 50%;
+    
         padding: 8px;
-        margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
 
     button {
-        grid-column: span 2;
-        padding: 10px;
+   
         background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
         font-size: 16px;
+        
+        margin-top: 10px;
     }
 
     button:hover {
         background-color: #0c6712;
     }
 
-    table {
-        width: 70%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
+    
 
     table, th, td {
         border: 1px solid #ddd;
@@ -64,12 +66,10 @@
 
     th, td {
         padding: 8px;
-        text-align: center;
+
     }
 
-    th {
-        background-color: #f2f2f2;
-    }
+ 
 </style>
 <body>
     <header>
@@ -82,10 +82,10 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <h1>Registro de Visitantes do Parque</h1>
-        
+
         <!-- Formulário para registro de visitantes -->
         <form id="formVisitante">
             <label for="nome">Nome:</label>
@@ -142,12 +142,14 @@
                 <!-- Linhas serão adicionadas dinamicamente aqui -->
             </tbody>
         </table>
+
+        <!-- Botão para apagar todos os visitantes -->
+        <button type="button" onclick="apagarTodos()">Apagar Todos</button>
     </main>
 
     <script>
         // Função para registrar o visitante e adicionar os dados à tabela
         function registrarVisitante() {
-            // Captura os valores dos inputs
             const nome = document.getElementById("nome").value;
             const marcaVeiculo = document.getElementById("marcaVeiculo").value;
             const modelo = document.getElementById("modelo").value;
@@ -159,31 +161,60 @@
             const horaEntrada = document.getElementById("horaEntrada").value;
             const autorizacao = document.getElementById("autorizacao").value;
 
-            // Verifica se todos os campos estão preenchidos
             if (!nome || !marcaVeiculo || !modelo || !matricula || !cor || !telemovel || !email || !motivoVisita || !horaEntrada || !autorizacao) {
                 alert("Por favor, preencha todos os campos.");
                 return;
             }
 
-            // Cria uma nova linha na tabela
+            const visitante = {
+                nome, marcaVeiculo, modelo, matricula, cor, telemovel, email, motivoVisita, horaEntrada, autorizacao
+            };
+
+            adicionarVisitanteNaTabela(visitante);
+            salvarVisitanteLocalStorage(visitante);
+
+            document.getElementById("formVisitante").reset();
+        }
+
+        // Função para adicionar o visitante na tabela
+        function adicionarVisitanteNaTabela(visitante) {
             const tabela = document.getElementById("tabelaVisitantes").getElementsByTagName('tbody')[0];
             const novaLinha = tabela.insertRow();
 
-            // Adiciona as células com os dados do visitante
-            novaLinha.insertCell(0).innerText = nome;
-            novaLinha.insertCell(1).innerText = marcaVeiculo;
-            novaLinha.insertCell(2).innerText = modelo;
-            novaLinha.insertCell(3).innerText = matricula;
-            novaLinha.insertCell(4).innerText = cor;
-            novaLinha.insertCell(5).innerText = telemovel;
-            novaLinha.insertCell(6).innerText = email;
-            novaLinha.insertCell(7).innerText = motivoVisita;
-            novaLinha.insertCell(8).innerText = horaEntrada;
-            novaLinha.insertCell(9).innerText = autorizacao;
-
-            // Limpa o formulário após o registro
-            document.getElementById("formVisitante").reset();
+            novaLinha.insertCell(0).innerText = visitante.nome;
+            novaLinha.insertCell(1).innerText = visitante.marcaVeiculo;
+            novaLinha.insertCell(2).innerText = visitante.modelo;
+            novaLinha.insertCell(3).innerText = visitante.matricula;
+            novaLinha.insertCell(4).innerText = visitante.cor;
+            novaLinha.insertCell(5).innerText = visitante.telemovel;
+            novaLinha.insertCell(6).innerText = visitante.email;
+            novaLinha.insertCell(7).innerText = visitante.motivoVisita;
+            novaLinha.insertCell(8).innerText = visitante.horaEntrada;
+            novaLinha.insertCell(9).innerText = visitante.autorizacao;
         }
+
+        // Função para salvar o visitante no localStorage
+        function salvarVisitanteLocalStorage(visitante) {
+            let visitantes = JSON.parse(localStorage.getItem("visitantes")) || [];
+            visitantes.push(visitante);
+            localStorage.setItem("visitantes", JSON.stringify(visitantes));
+        }
+
+        // Função para carregar os visitantes do localStorage ao carregar a página
+        function carregarVisitantes() {
+            const visitantes = JSON.parse(localStorage.getItem("visitantes")) || [];
+            visitantes.forEach(visitante => adicionarVisitanteNaTabela(visitante));
+        }
+
+        // Função para apagar todos os visitantes
+        function apagarTodos() {
+            localStorage.removeItem("visitantes");
+            const tabela = document.getElementById("tabelaVisitantes").getElementsByTagName('tbody')[0];
+            tabela.innerHTML = ""; // Remove todas as linhas da tabela
+        }
+
+        // Carrega os visitantes salvos ao iniciar a página
+        window.onload = carregarVisitantes;
     </script>
 
 </body>
