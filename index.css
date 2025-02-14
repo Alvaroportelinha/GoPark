@@ -1,0 +1,28 @@
+
+.cont-iten {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;    
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.284);
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+  
+}
+
+.brand-icon {
+    display: flex;
+    width: 60px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.brand-icon:hover {
+    transform: scale(1.5);
+}
