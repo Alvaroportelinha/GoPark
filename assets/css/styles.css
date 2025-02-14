@@ -35,6 +35,7 @@ header {
 
 .hellow {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;  
     padding: 20px;  

@@ -17,9 +17,9 @@
         <a class="hamburger" href="public/html/gestão.html">☰</a>
 
     </header>
-    <section class="hellow">
+   
         <h3>Sistema de Controle de Estacionamento <br> Escolar Sebastião da Gama</h3>
-        <!-- Marcas de carros -->
+        
         <div id="mainconteiner">
             <div class="cont-iten">
                 <img id="alfa-romeo" src="img/ALFA ROMEO.png" alt="Alfa Romeo" class="brand-icon"
@@ -60,36 +60,34 @@
             </div>
         </div>
 
+    <!-- Tabela oculta onde os carros serão cadastrados -->
+    <table id="tabelaPrincipal" style="display: none;">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Matrícula</th>
+                <th>Cor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="carDataRow" style="display: none;">
+                <td id="carNome"></td>
+                <td id="carMarca"></td>
+                <td id="carMatricula"></td>
+                <td id="carCor"></td>
+            </tr>
+        </tbody>
 
 
-        <!-- Tabela oculta onde os carros serão cadastrados -->
-        <table id="tabelaPrincipal" style="display: none;">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Marca</th>
-                    <th>Matrícula</th>
-                    <th>Cor</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="carDataRow" style="display: none;">
-                    <td id="carNome"></td>
-                    <td id="carMarca"></td>
-                    <td id="carMatricula"></td>
-                    <td id="carCor"></td>
-                </tr>
-            </tbody>
+        </main>
 
-
-            </main>
-
-            <script src="public/js/index.js"></script>
-            <script src="public/js/script.js"></script>
-            <script src="public/js/exibir-utente.js"></script>
-            <script src="public/js/gestão.js"></script>
-        </table>
+        <script src="public/js/index.js"></script>
+        <script src="public/js/script.js"></script>
+        <script src="public/js/exibir-utente.js"></script>
+        <script src="public/js/gestão.js"></script>
+    </table>
     </section>
 
 </body>

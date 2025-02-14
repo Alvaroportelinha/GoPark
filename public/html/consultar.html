@@ -19,7 +19,28 @@
 
 
     <main>
+        <h5>utentes</h5>
+
+        <!-- Tabela onde os carros serão exibidos -->
+        <table id="tabelaCarros">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Matrícula</th>
+                    <th>Cor</th>
+                    <th>Telemóvel</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaBody">
+                <!-- As linhas serão adicionadas aqui -->
+            </tbody>
         </table>
+        <!-- Seção de Utentes -->
+        <input type="text" id="pesquisarInput" placeholder="Pesquisar por Nome ou Matrícula" onkeyup="pesquisarUtente()">
         <h5>Lista de Utentes</h5>
         <table id="tabelaUtentes">
             <thead>
@@ -36,10 +57,7 @@
                     
                 </tr>
             </thead>
-            <tbody id="tabelaUtentesBody">
-                <!-- As linhas dos utentes serão exibidas aqui -->
-            </tbody>
-        </table>
+    
         <button onclick="exibirUtentes()">Exibir Utentes</button>
     </main>
 

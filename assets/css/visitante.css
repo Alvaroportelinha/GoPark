@@ -1,0 +1,35 @@
+.formconteiner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;    
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.284);
+    border-radius: 8px;
+    width: auto;
+
+  
+
+}
+
+h3{
+    margin-top: 18px;
+}
+
+.formadd{
+    display: flex;
+    flex-direction: column;
+    flex-grow: initial;
+    padding: 30px;
+  
+}
+
+.formadd input{
+    height: 60px;
+    width:  3fr;
+    padding: 20px;
+    margin: 2px;
+    border-radius: 8px;
+    border: 1px solid gray;
+
+}

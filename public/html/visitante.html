@@ -5,178 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
-<style>
-
-    form {
-        mar
-        gap: 10px;
-        display: inline;
-justify-content: left;
 
 
-        align-items: center;
-    }
-
-
-    input[type="text"], input[type="tel"], input[type="email"], input[type="time"] {
-    
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        gap: 22px;
-    }
-
-
- 
-</style>
 <body>
+
     <header>
-        <nav class="navbar">
-            <a href="index.html"><img src="img/logo_cosap_1.png" alt="Logo" class="logo"></a>
-            <ul class="nav-list">
-                <li><a href="registros.html">Registros</a></li>
-                <li><a href="gestão.html">Gestão</a></li>
-                <li><a href="visitante.html">Visitante</a></li>
-            </ul>
-        </nav>
+        <a href="../../index.html">
+            <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
+        </a>
+        <a class="hamburger" href="gestão.html">☰</a>
     </header>
-
     <main>
-        <h1>Registro de Visitantes do Parque</h1>
-
-        <!-- Formulário para registro de visitantes -->
-        <form id="formVisitante">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" placeholder="Nome" required><br>
-
-            <label for="marcaVeiculo">Marca do Veículo:</label>
-            <input type="text" id="marcaVeiculo" placeholder="Marca do Veículo" required><br>
-
-            <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo" placeholder="Modelo" required><br>
-
-            <label for="matricula">Matrícula:</label>
-            <input type="text" id="matricula" placeholder="Matrícula" required><br>
-
-            <label for="cor">Cor:</label>
-            <input type="text" id="cor" placeholder="Cor" required><br>
-
-            <label for="telemovel">Telemóvel:</label>
-            <input type="tel" id="telemovel" placeholder="Telemóvel" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Email" required><br>
-
-            <label for="motivoVisita">Motivo da Visita:</label>
-            <input type="text" id="motivoVisita" placeholder="Motivo da Visita" required><br>
-
-            <label for="horaEntrada">Hora de Entrada:</label>
-            <input type="time" id="horaEntrada" required><br>
-
-            <label for="autorizacao">Autorização:</label>
-            <input type="text" id="autorizacao" placeholder="Autorização" required><br>
-
-            <button type="button" onclick="registrarVisitante()">Registrar</button>
-        </form>
-
-        <!-- Tabela para exibir os visitantes registrados -->
-        <h2>Visitantes Registrados</h2>
-        <table id="tabelaVisitantes" border="1">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Marca do Veículo</th>
-                    <th>Modelo</th>
-                    <th>Matrícula</th>
-                    <th>Cor</th>
-                    <th>Telemóvel</th>
-                    <th>Email</th>
-                    <th>Motivo da Visita</th>
-                    <th>Hora de Entrada</th>
-                    <th>Autorização</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Linhas serão adicionadas dinamicamente aqui -->
-            </tbody>
-        </table>
-
-        <!-- Botão para apagar todos os visitantes -->
-        <button type="button" onclick="apagarTodos()">Apagar Todos</button>
+        <h2>novo visitante</h2>
+        <div class="gestaoconteiner">
+            <!-- Formulário para registro de visitantes -->
+            <form id="formVisitante" class="formconteiner">
+                <input type="text" id="nome" placeholder="Nome" required><br>
+                <input type="text" id="marcaVeiculo" placeholder="Marca do Veículo" required><br>
+                <input type="text" id="modelo" placeholder="Modelo" required><br>
+                <input type="text" id="matricula" placeholder="Matrícula" required><br>
+                <input type="text" id="cor" placeholder="Cor" required><br>
+                <input type="tel" id="telemovel" placeholder="Telemóvel" required><br>
+                <input type="email" id="email" placeholder="Email" required><br>
+                <input type="text" id="motivoVisita" placeholder="Motivo da Visita" required><br>
+                <input type="time" id="horaEntrada" required><br>
+                <input type="text" id="autorizacao" placeholder="Autorização" required><br>
+                <button type="button" onclick="registrarVisitante()">Registrar</button>
+            </form>
+        </div>
     </main>
-
-    <script>
-        // Função para registrar o visitante e adicionar os dados à tabela
-        function registrarVisitante() {
-            const nome = document.getElementById("nome").value;
-            const marcaVeiculo = document.getElementById("marcaVeiculo").value;
-            const modelo = document.getElementById("modelo").value;
-            const matricula = document.getElementById("matricula").value;
-            const cor = document.getElementById("cor").value;
-            const telemovel = document.getElementById("telemovel").value;
-            const email = document.getElementById("email").value;
-            const motivoVisita = document.getElementById("motivoVisita").value;
-            const horaEntrada = document.getElementById("horaEntrada").value;
-            const autorizacao = document.getElementById("autorizacao").value;
-
-            if (!nome || !marcaVeiculo || !modelo || !matricula || !cor || !telemovel || !email || !motivoVisita || !horaEntrada || !autorizacao) {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            const visitante = {
-                nome, marcaVeiculo, modelo, matricula, cor, telemovel, email, motivoVisita, horaEntrada, autorizacao
-            };
-
-            adicionarVisitanteNaTabela(visitante);
-            salvarVisitanteLocalStorage(visitante);
-
-            document.getElementById("formVisitante").reset();
-        }
-
-        // Função para adicionar o visitante na tabela
-        function adicionarVisitanteNaTabela(visitante) {
-            const tabela = document.getElementById("tabelaVisitantes").getElementsByTagName('tbody')[0];
-            const novaLinha = tabela.insertRow();
-
-            novaLinha.insertCell(0).innerText = visitante.nome;
-            novaLinha.insertCell(1).innerText = visitante.marcaVeiculo;
-            novaLinha.insertCell(2).innerText = visitante.modelo;
-            novaLinha.insertCell(3).innerText = visitante.matricula;
-            novaLinha.insertCell(4).innerText = visitante.cor;
-            novaLinha.insertCell(5).innerText = visitante.telemovel;
-            novaLinha.insertCell(6).innerText = visitante.email;
-            novaLinha.insertCell(7).innerText = visitante.motivoVisita;
-            novaLinha.insertCell(8).innerText = visitante.horaEntrada;
-            novaLinha.insertCell(9).innerText = visitante.autorizacao;
-        }
-
-        // Função para salvar o visitante no localStorage
-        function salvarVisitanteLocalStorage(visitante) {
-            let visitantes = JSON.parse(localStorage.getItem("visitantes")) || [];
-            visitantes.push(visitante);
-            localStorage.setItem("visitantes", JSON.stringify(visitantes));
-        }
-
-        // Função para carregar os visitantes do localStorage ao carregar a página
-        function carregarVisitantes() {
-            const visitantes = JSON.parse(localStorage.getItem("visitantes")) || [];
-            visitantes.forEach(visitante => adicionarVisitanteNaTabela(visitante));
-        }
-
-        // Função para apagar todos os visitantes
-        function apagarTodos() {
-            localStorage.removeItem("visitantes");
-            const tabela = document.getElementById("tabelaVisitantes").getElementsByTagName('tbody')[0];
-            tabela.innerHTML = ""; // Remove todas as linhas da tabela
-        }
-
-        // Carrega os visitantes salvos ao iniciar a página
-        window.onload = carregarVisitantes;
-    </script>
-
 </body>
 
 </html>
