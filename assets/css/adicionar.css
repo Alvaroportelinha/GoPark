@@ -1,0 +1,13 @@
+
+.utente{
+    background-image: url(../../img/person.png);
+    background-size: cover;
+}
+.novo-carro{
+    background-image: url(../img/caricon.png);
+    background-size: cover;
+}
+.lista{
+    background-image: url(../../img/lista.png);
+    background-size: cover;
+}

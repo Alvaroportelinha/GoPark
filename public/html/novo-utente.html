@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVO UTENTE</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+
+
+    <header>
+        <a href="../../../index.html">
+            <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
+        </a>
+        <a class="hamburger" href="gestão.html">☰</a>
+    </header>
+
+
+    <script src="script.js"></script>
+
+
+    <!-- Formulário para registro de visitantes -->
+
+    <div class="formconteiner">
+        <main>
+            <h5>Novo Utente</h5>
+
+            <!-- Formulário de cadastro de carro -->
+            <form id="formCarro" class="form-visitante formadd">
+                <input type="text" id="inputNome" placeholder="Nome do Utente">
+                <select id="inputMarca" class="selection">
+                    <!-- Opções de marcas -->
+                    <option value="alfa-romeo">Alfa Romeo</option>
+                    <option value="audi">Audi</option>
+                    <option value="bmw">BMW</option>
+                    <option value="citroen">Citroën</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="dacia">Dacia</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="ford">Ford</option>
+                    <option value="honda">Honda</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="jeep">Jeep</option>
+                    <option value="kia">Kia</option>
+                    <option value="land-rover">Land Rover</option>
+                    <option value="lexus">Lexus</option>
+                    <option value="mazda">Mazda</option>
+                    <option value="mercedes-benz">Mercedes-Benz</option>
+                    <option value="mini">Mini</option>
+                    <option value="mitsubishi">Mitsubishi</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="opel">Opel</option>
+                    <option value="peugeot">Peugeot</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="renault">Renault</option>
+                    <option value="seat">SEAT</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="suzuki">Suzuki</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="outro"></option>
+                    <!-- Outras marcas... -->
+                </select>
+                <input type="text" id="inputModelo" placeholder="Modelo do carro">
+                <input type="text" id="inputMatricula" placeholder="Matrícula">
+                <input type="text" id="inputCor" placeholder="Cor do carro">
+                <input type="text" id="inputTelemovel" placeholder="Número de Telemóvel">
+                <input type="email" id="inputEmail" placeholder="Email do proprietário">
+                <button type="button" onclick="adicionarCarro()">Adicionar</button>
+            </form>
+        </main>
+
+
+    </div>
+
+
+    <script src="../js/index.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/exibir-utente.js"></script>
+    <script src="../js/gestão.js"></script>
+</body>
+
+</html>

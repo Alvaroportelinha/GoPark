@@ -1,9 +1,10 @@
 @import url(global.css);
 @import url(reset.css);
 @import url(visitante.css);
-@import url(gestao.css);
+@import url(gestão.css);
 @import url(adicionar.css);
 @import url(index.css);
+@import url(novo-utente.css);
 /* HEADER */
 /* HEADER */
 header {
