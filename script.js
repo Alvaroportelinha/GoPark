@@ -1,4 +1,4 @@
-// Função para adicionar carros à tabela de gestão
+
 function adicionarCarro() {
     // Coletando os valores dos inputs
     const nome = document.getElementById('inputNome').value;
@@ -9,72 +9,15 @@ function adicionarCarro() {
     const telemovel = document.getElementById('inputTelemovel').value;
     const email = document.getElementById('inputEmail').value;
 
-    // Criando uma nova linha na tabela de gestão
-    const tabelaBody = document.getElementById('tabelaBody');
-    const novaLinha = document.createElement('tr');
-
-    // Preenchendo os dados na nova linha
-    novaLinha.innerHTML = `
-        <td><input type="text" value="${nome}" readonly></td>
-        <td><input type="text" value="${marca}" readonly></td>
-        <td><input type="text" value="${modelo}" readonly></td>
-        <td><input type="text" value="${matricula}" readonly></td>
-        <td><input type="text" value="${cor}" readonly></td>
-        <td><input type="text" value="${telemovel}" readonly></td>
-        <td><input type="email" value="${email}" readonly></td>
-        <td>
-            <button onclick="editarLinha(this)">Editar</button>
-            <button onclick="removerLinha(this)">Remover</button>
-            <button onclick="cadastrarCarro(this)">Cadastrar</button>
-        </td>
-    `;
-
-    tabelaBody.appendChild(novaLinha);
-
-    // Limpa o formulário
-    document.getElementById('formCarro').reset();
-}
-
-// Função para editar uma linha
-function editarLinha(button) {
-    const linha = button.parentNode.parentNode;
-    const inputs = linha.querySelectorAll('input');
-    inputs.forEach(input => input.removeAttribute('readonly'));
-    button.textContent = 'Salvar';
-    button.setAttribute('onclick', 'salvarLinha(this)');
-}
-
-// Função para salvar uma linha editada
-function salvarLinha(button) {
-    const linha = button.parentNode.parentNode;
-    const inputs = linha.querySelectorAll('input');
-    inputs.forEach(input => input.setAttribute('readonly', 'true'));
-    button.textContent = 'Editar';
-    button.setAttribute('onclick', 'editarLinha(this)');
-}
-
-// Função para remover uma linha da tabela
-function removerLinha(button) {
-    const linha = button.parentNode.parentNode;
-    linha.remove();
-}
-
-// Função para cadastrar um carro e salvá-lo no localStorage
-function cadastrarCarro(button) {
-    const linha = button.parentNode.parentNode;
-    
-    // Coleta os dados da linha
-    const nome = linha.querySelector('td:nth-child(1) input').value;
-    const marca = linha.querySelector('td:nth-child(2) input').value;
-    const matricula = linha.querySelector('td:nth-child(4) input').value;
-    const cor = linha.querySelector('td:nth-child(5) input').value;
-
-    // Objeto carro com os dados coletados
+    // Criando um objeto carro
     const carro = {
         nome,
         marca,
+        modelo,
         matricula,
         cor,
+        telemovel,
+        email,
         entrada: null,
         saida: null
     };
@@ -87,11 +30,26 @@ function cadastrarCarro(button) {
     carrosCadastrados[marca].push(carro);
     localStorage.setItem('carrosPorMarca', JSON.stringify(carrosCadastrados));
 
+    // Adicionando o carro na tabela
+    const tabelaBody = document.getElementById('tabelaBody');
+    const novaLinha = document.createElement('tr');
+    novaLinha.innerHTML = `
+        <td>${nome}</td>
+        <td>${marca}</td>
+        <td>${modelo}</td>
+        <td>${matricula}</td>
+        <td>${cor}</td>
+        <td>${telemovel}</td>
+        <td>${email}</td>
+    `;
+    tabelaBody.appendChild(novaLinha);
+
     alert('Carro cadastrado com sucesso!');
     
-    // Remove a linha de cadastro
-    linha.remove();
+    // Limpa o formulário
+    document.getElementById('formCarro').reset();
 }
+
 
 // Adiciona evento de clique nos ícones de marcas
 const marcas = document.querySelectorAll('.brand-icon');
@@ -149,13 +107,6 @@ function exibirCarrosPorMarca(marca) {
     }
 }
 
-// Função para eliminar uma linha da tabela principal
-function eliminarLinha(button) {
-    const linha = button.parentNode.parentNode;
-    linha.remove();
-
-    // Opcional: Atualizar o localStorage após a remoção
-}
 
 // Função para formatar a data e hora local
 function formatLocalDateTime(date) {

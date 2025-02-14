@@ -68,16 +68,7 @@
             </div>
         </div>
 
-        <!-- Tabela Principal -->
-        <!-- Tabela onde os carros são exibidos -->
-        <table id="tabelaCarros">
-            <thead>
 
-            </thead>
-            <tbody id="tabelaBody">
-                <!-- Os carros serão inseridos aqui -->
-            </tbody>
-        </table>
 
         <!-- Tabela oculta onde os carros serão cadastrados -->
         <table id="tabelaPrincipal" style="display: none;">
@@ -87,10 +78,7 @@
                     <th>Marca</th>
                     <th>Matrícula</th>
                     <th>Cor</th>
-                    <th>Data e Hora de Entrada</th>
-                    <th>Data e Hora de Saída</th>
                     <th>Ações</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -99,23 +87,9 @@
                     <td id="carMarca"></td>
                     <td id="carMatricula"></td>
                     <td id="carCor"></td>
-                    <td>
-                        <button onclick="setDataHoraEntrada(this)">Entrou</button>
-                        <input type="datetime-local" class="dataHoraEntradaInput">
-                    </td>
-                    <td>
-                        <button onclick="setDataHoraSaida(this)">Saiu</button>
-                        <input type="datetime-local" class="dataHoraSaidaInput">
-                    </td>
-                    <td>
-                        <button class="registrar" onclick="registrar()">Registrar</button>
-                    </td>
                 </tr>
-                
-                </tr>
-
             </tbody>
-        </table>
+     
 
     </main>
 
