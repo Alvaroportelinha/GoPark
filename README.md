@@ -1,48 +1,47 @@
-#🚗 Go Park - Gestão de Estacionamento Escolar
-O Go Park é um sistema desenvolvido para facilitar a gestão do estacionamento escolar da Escola Sebastião da Gama. Ele permite o cadastro de utentes, veículos e visitantes, além do registro de entradas e saídas, tudo armazenado localmente no navegador via Local Storage.
+# Go Park - Estacionamento Escolar Sebastião da Gama
 
-📌 Funcionalidades
-✅ Gerenciamento de Utentes
+Bem-vindo ao **Go Park**, a plataforma digital de gestão de estacionamento escolar da **Escola Sebastião da Gama**. O sistema permite a gestão eficiente de vagas, controle de acesso de veículos e registro de visitantes.
 
-Cadastro de professores, funcionários, alunos e visitantes.
-✅ Cadastro de Veículos
+## 🔗 Acesso ao Sistema
+O sistema pode ser acessado através do domínio:
+https://alvaroportelinha.github.io/Go-Park/index.html
 
-Associar veículos aos utentes.
-✅ Registro de Entradas e Saídas
 
-Registar a entrada e saída de veículos com um clique.
-Armazenamento dos registros no Local Storage.
-✅ Consulta de Acessos
+## 📌 Funcionalidades
 
-Histórico de acessos baseado no Local Storage.
-✅ Gestão de Visitantes
+- 🚗 Cadastro e remoção de veículos autorizados.
+- 🛑 Controle de entrada e saída.
+- 📋 Registo de visitantes.
+- 📊 Painel de administração para monitoramento em tempo real.
 
-Cadastro e listagem de visitantes no estacionamento.
-📂 Estrutura do Projeto
-📁 assets/ → Arquivos de estilo (CSS).
-📁 img/ → Imagens do projeto.
-📁 js/ → Scripts JavaScript responsáveis pelo funcionamento do sistema.
-📁 pages/ → Páginas HTML:
+## 🛠️ Tecnologias Utilizadas
 
-index.html → Página principal com a listagem de veículos.
-registros.html → Exibe o histórico de entradas e saídas.
-gestão.html → Gerenciamento de utentes e veículos.
-visitante.html → Cadastro e listagem de visitantes.
-🚀 Como Usar
-1️⃣ Clonar o repositório:
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js
+- **Banco de Dados:** [Especificar banco de dados, se houver]
+- **Servidor:** Ubuntu 24
 
-bash
-Copy
-Edit
-git clone https://github.com/teu-usuario/go-park.git
-cd go-park
-2️⃣ Abrir o arquivo index.html no navegador.
+## 🚀 Como Executar o Projeto
 
-3️⃣ Cadastrar utentes, veículos e visitantes pela interface gráfica.
+### 1️⃣ Clonar o Repositório
+```bash
+ git clone https://github.com/seuusuario/go-park.git
+```
 
-4️⃣ Os dados são salvos automaticamente no Local Storage do navegador.
+### 2️⃣ Instalar Dependências
+```bash
+ cd go-park
+ npm install
+```
 
-⚠️ Atenção: Como os dados são armazenados apenas no Local Storage, eles podem ser perdidos ao limpar o cache do navegador ou acessar de outro dispositivo.
+### 3️⃣ Iniciar o Servidor
+```bash
+ npm start
+```
 
-📜 Licença
-Este projeto é de uso livre para aprendizado e desenvolvimento. 🚀
+
+## 📞 Contato
+Para dúvidas ou suporte, entre em contato com a equipe de desenvolvimento.
+
+---
+**Go Park - Estacionamento Inteligente para a Comunidade Escolar** 🚘
