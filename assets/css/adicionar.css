@@ -8,6 +8,20 @@
     background-size: cover;
 }
 .listar{
-    background-image: url(../../img/lista.png);
+    background-image: url(../../img/listar.png);
+    background-size: cover;
+}
+.consultar{
+    background-image: url(../../img/consultar.png);
+    background-size: cover;
+}
+
+.pagamentos{
+    background-image: url(../../img/pay.png);
+    background-size: cover;
+}
+
+.visitante{
+    background-image: url(../../img/visitante.png);
     background-size: cover;
 }
