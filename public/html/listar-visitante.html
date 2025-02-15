@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão</title>
+    <title>Visitantes Registrados</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 
 <body>
-    <!-- Header -->
+
     <header>
         <a href="../../index.html">
             <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
@@ -17,39 +17,33 @@
         <a class="hamburger" href="gestão.html">☰</a>
     </header>
 
-
     <main>
-        </table>
-        <h5>Lista de Utentes</h5>
-        <table id="tabelaUtentes">
-            <thead>
-                <tr>
-                    <td>Nome do Utente</td>
-                    <td>Marca</td>
-                    <td>Modelo</td>
-                    <td>Matrícula</td>
-                    <td>Cor</td>
-                    <td>Telemóvel</td>
-                    <td>Email</td>
-                    <td>Ações</td>
-                    <td>Pagamento</td>
-                    
-                </tr>
-            </thead>
-            <tbody id="tabelaUtentesBody">
-                <!-- As linhas dos utentes serão exibidas aqui -->
-            </tbody>
-        </table>
-        <button onclick="exibirUtentes()">Exibir Utentes</button>
+        <h2>Lista de Visitantes</h2>
+        <div class="gestaoconteiner">
+            <table id="tabelaVisitantes" border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Marca do Veículo</th>
+                        <th>Modelo</th>
+                        <th>Matrícula</th>
+                        <th>Cor</th>
+                        <th>Telemóvel</th>
+                        <th>Email</th>
+                        <th>Motivo da Visita</th>
+                        <th>Hora de Entrada</th>
+                        <th>Autorização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Visitantes serão inseridos aqui -->
+                </tbody>
+            </table>
+            <button onclick="apagarTodos()">Apagar Todos</button>
+        </div>
     </main>
+
+    <script src="../js/listar-visitantes.js"></script>
+
 </body>
-
-<script src="../js/index.js"></script>
-<script src="../js/script.js"></script>
-<script src="../js/exibir-utente.js"></script>
-<script src="../js/gestão.js"></script>
-<script src="../js/consultar.js"></script>
-<script src="../js/visitente.js"></script>
-<script src="../js/registros.js"></script>
-
 </html>
