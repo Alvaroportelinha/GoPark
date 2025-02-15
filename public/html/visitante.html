@@ -16,25 +16,27 @@
         </a>
         <a class="hamburger" href="gestão.html">☰</a>
     </header>
-
-    <main>
-        <h2>Registrar Novo Visitante</h2>
-        <div class="gestaoconteiner">
-            <form id="formVisitante" class="formconteiner">
-                <input type="text" id="nome" placeholder="Nome" required><br>
-                <input type="text" id="marcaVeiculo" placeholder="Marca do Veículo" required><br>
-                <input type="text" id="modelo" placeholder="Modelo" required><br>
-                <input type="text" id="matricula" placeholder="Matrícula" required><br>
-                <input type="text" id="cor" placeholder="Cor" required><br>
-                <input type="tel" id="telemovel" placeholder="Telemóvel" required><br>
-                <input type="email" id="email" placeholder="Email" required><br>
-                <input type="text" id="motivoVisita" placeholder="Motivo da Visita" required><br>
-                <input type="time" id="horaEntrada" required><br>
-                <input type="text" id="autorizacao" placeholder="Autorização" required><br>
-                <button type="button" onclick="registrarVisitante()">Registrar</button>
-            </form>
-        </div>
-    </main>
+<div class="formconteiner">
+    
+        <main>
+            <h2>Novo <br>Visitante</h2>
+    
+                <form id="formVisitante" class="form-visitante">
+                    <input type="text" id="nome" placeholder="Nome" required><br>
+                    <input type="text" id="marcaVeiculo" placeholder="Marca do Veículo" required><br>
+                    <input type="text" id="modelo" placeholder="Modelo" ><br>
+                    <input type="text" id="matricula" placeholder="Matrícula" required><br>
+                    <input type="text" id="cor" placeholder="Cor" ><br>
+                    <input type="tel" id="telemovel" placeholder="Telemóvel" ><br>
+                    <input type="email" id="email" placeholder="Email" ><br>
+                    <input type="text" id="motivoVisita" placeholder="Motivo da Visita" required><br>
+                    <input type="time" id="horaEntrada" required><br>
+                    <input type="text" id="autorizacao" placeholder="Autorização" required><br>
+                    <button type="button" onclick="registrarVisitante()">Registrar</button>
+                </form>
+    
+        </main>
+</div>
 
     <script src="../js/visitante.js"></script>
 

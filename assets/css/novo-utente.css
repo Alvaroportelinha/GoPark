@@ -7,9 +7,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.284);
     border-radius: 8px;
     width: auto;
-
-  
-
 }
 
 h3{
@@ -20,14 +17,14 @@ h3{
     display: flex;
     flex-direction: column;
     flex-grow: initial;
-   gap: 10px;
-   padding: 10px;
+   gap: 15px;
+   padding: 15px;
   
 }
 
 .formadd input{
     font-weight: bolder;
-    height: 10px;
+    height: 20px;
     padding: 10px;
     margin: 2px;
     border-radius: 8px;

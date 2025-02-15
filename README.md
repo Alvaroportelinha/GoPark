@@ -4,7 +4,7 @@ Bem-vindo ao **Go Park**, a plataforma digital de gestão de estacionamento esco
 
 ## 🔗 Acesso ao Sistema
 O sistema pode ser acessado através do domínio:
-https://alvaroportelinha.github.io/Go-Park/index.html
+https://alvaroportelinha.github.io/sistema/
 
 
 ## 📌 Funcionalidades
