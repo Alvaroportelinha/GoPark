@@ -1,4 +1,4 @@
-🚗 Go Park - Gestão de Estacionamento Escolar
+#🚗 Go Park - Gestão de Estacionamento Escolar
 O Go Park é um sistema desenvolvido para facilitar a gestão do estacionamento escolar da Escola Sebastião da Gama. Ele permite o cadastro de utentes, veículos e visitantes, além do registro de entradas e saídas, tudo armazenado localmente no navegador via Local Storage.
 
 📌 Funcionalidades
