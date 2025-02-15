@@ -9,14 +9,12 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <a href="../../index.html">
             <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
         </a>
         <a class="hamburger" href="gestão.html">☰</a>
     </header>
-
 
     <h1>Registros de Estacionamento</h1>
 
@@ -37,92 +35,13 @@
         </tbody>
     </table>
 
-    <button id="limparRegistros">Limpar Registros</button>
     <button id="exportarPDF">Exportar para PDF</button>
+    <button id="limparRegistros">Limpar Registros</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        // Função para carregar os registros salvos
-        function carregarRegistros() {
-            const registros = JSON.parse(localStorage.getItem('tabelaRegistros')) || [];
-            const tabelaBody = document.querySelector('#tabelaRegistros tbody');
-            tabelaBody.innerHTML = '';
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 
-            registros.forEach((registro, index) => {
-                const row = tabelaBody.insertRow();
-                row.innerHTML = `
-                    <td>${registro.nome}</td>
-                    <td>${registro.marca}</td>
-                    <td>${registro.matricula}</td>
-                    <td>${registro.cor}</td>
-                    <td>${registro.horaEntrada}</td>
-                    <td>${registro.horaSaida}</td>
-                    <td><button onclick="removerRegistro(${index})">Remover</button></td>
-                `;
-            });
-        }
-
-        // Função para remover um registro
-        function removerRegistro(index) {
-            let registros = JSON.parse(localStorage.getItem('tabelaRegistros')) || [];
-            registros.splice(index, 1);
-            localStorage.setItem('tabelaRegistros', JSON.stringify(registros));
-            carregarRegistros();
-        }
-
-        // Função para limpar todos os registros
-        document.getElementById('limparRegistros').addEventListener('click', function () {
-            localStorage.removeItem('tabelaRegistros');
-            carregarRegistros();
-        });
-
-        // Função para exportar a tabela para PDF
-        document.getElementById('exportarPDF').addEventListener('click', function () {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            // Adiciona o logo no PDF (certifique-se que o logo esteja no caminho correto)
-            const logo = new Image();
-            logo.src = 'img/logo_cosap_1.png';
-            logo.onload = function () {
-                doc.addImage(logo, 'PNG', 10, 10, 30, 30); // Adiciona o logo na posição (x=10, y=10) e tamanho (30x30)
-
-                // Adiciona o título do PDF como cabeçalho
-                doc.setFontSize(18);
-                doc.text("Registros de Estacionamento", 50, 20); // Posição (x=50, y=20)
-                
-                // Cabeçalho da tabela no PDF
-                doc.setFontSize(12);
-                doc.text("Nome", 10, 50);
-                doc.text("Marca", 40, 50);
-                doc.text("Matrícula", 70, 50);
-                doc.text("Cor", 100, 50);
-                doc.text("Entrada", 130, 50);
-                doc.text("Saída", 160, 50);
-
-                // Pega os dados da tabela e cria o PDF
-                let linhaAtual = 60; // Posição Y inicial no PDF
-                const registros = JSON.parse(localStorage.getItem('tabelaRegistros')) || [];
-
-                registros.forEach(registro => {
-                    doc.text(registro.nome, 10, linhaAtual);
-                    doc.text(registro.marca, 40, linhaAtual);
-                    doc.text(registro.matricula, 70, linhaAtual);
-                    doc.text(registro.cor, 100, linhaAtual);
-                    doc.text(registro.horaEntrada, 130, linhaAtual);
-                    doc.text(registro.horaSaida, 160, linhaAtual);
-                    linhaAtual += 10;
-                });
-
-                // Salva o PDF
-                doc.save('registros_estacionamento.pdf');
-            };
-        });
-
-        // Carregar os registros quando a página for carregada
-        window.onload = carregarRegistros;
-    </script>
-
+    <script src="../js/registros.js"></script>
 </body>
 
 </html>
