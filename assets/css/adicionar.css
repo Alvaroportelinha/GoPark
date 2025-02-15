@@ -3,8 +3,8 @@
     background-image: url(../../img/person.png);
     background-size: cover;
 }
-.novo-carro{
-    background-image: url(../img/caricon.png);
+.car{
+    background-image: url(../../img/car.png);
     background-size: cover;
 }
 .listar{
