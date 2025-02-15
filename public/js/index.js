@@ -7,7 +7,6 @@ marcas.forEach(marca => {
     });
 });
 
-// Função para exibir carros por marca, com ordenação por matrícula
 function exibirCarrosPorMarca(marca) {
     const tabelaPrincipal = document.getElementById('tabelaPrincipal');
     const tbody = tabelaPrincipal.querySelector('tbody');
@@ -17,37 +16,51 @@ function exibirCarrosPorMarca(marca) {
 
     if (carrosCadastrados[marca] && carrosCadastrados[marca].length > 0) {
         // Ordenar os carros por matrícula (de forma ascendente)
-        const carrosOrdenados = carrosCadastrados[marca].sort((a, b) => {
-            if (a.matricula < b.matricula) {
-                return -1;
-            } else if (a.matricula > b.matricula) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        const carrosOrdenados = carrosCadastrados[marca].sort((a, b) => a.matricula.localeCompare(b.matricula));
 
         tabelaPrincipal.style.display = 'table'; // Exibe a tabela
 
         carrosOrdenados.forEach(carro => {
-            const novaLinha = document.createElement('tr');
-            novaLinha.innerHTML = `
+            // Primeira linha: Nome, Marca, Matrícula, Cor
+            const linhaInfo = document.createElement('tr');
+            linhaInfo.innerHTML = `
                 <td>${carro.nome}</td>
                 <td>${carro.marca}</td>
                 <td>${carro.matricula}</td>
                 <td>${carro.cor}</td>
-                <td>
-                    <button onclick="setDataHoraEntrada(this)">Entrou</button>
-                    <input type="datetime-local" id="dataHoraEntradaInput">
-                </td>
-                <td>
-                    <button onclick="setDataHoraSaida(this)">Saiu</button>
-                    <input type="datetime-local" id="dataHoraSaidaInput">
-                </td>
-                <td><button onclick="registrar(this)">Registrar</button></td>
-               
             `;
-            tbody.appendChild(novaLinha);
+
+            // Segunda linha: Entrada
+            const linhaEntrada = document.createElement('tr');
+            linhaEntrada.innerHTML = `
+                <td colspan="4">
+                    <button onclick="setDataHoraEntrada(this)">Entrou</button>
+                    <input type="datetime-local" class="dataHoraEntradaInput">
+                </td>
+            `;
+
+            // Terceira linha: Saída
+            const linhaSaida = document.createElement('tr');
+            linhaSaida.innerHTML = `
+                <td colspan="4">
+                    <button onclick="setDataHoraSaida(this)">Saiu</button>
+                    <input type="datetime-local" class="dataHoraSaidaInput">
+                </td>
+            `;
+
+            // Quarta linha: Registrar
+            const linhaRegistrar = document.createElement('tr');
+            linhaRegistrar.innerHTML = `
+                <td colspan="4">
+                    <button onclick="registrar(this)">Registrar</button>
+                </td>
+            `;
+
+            // Adiciona todas as linhas ao tbody
+            tbody.appendChild(linhaInfo);
+            tbody.appendChild(linhaEntrada);
+            tbody.appendChild(linhaSaida);
+            tbody.appendChild(linhaRegistrar);
         });
     } else {
         tabelaPrincipal.style.display = 'none'; // Oculta a tabela se não houver carros para essa marca
@@ -74,16 +87,21 @@ function setDataHoraSaida(button) {
 }
 
 function registrar(button) {
-    const linha = button.parentNode.parentNode;
-    
-    // Coleta os dados da linha
-    const nome = linha.querySelector('td:nth-child(1)').textContent;
-    const marca = linha.querySelector('td:nth-child(2)').textContent;
-    const matricula = linha.querySelector('td:nth-child(3)').textContent;
-    const cor = linha.querySelector('td:nth-child(4)').textContent;
-    const horaEntrada = linha.querySelector('input[id="dataHoraEntradaInput"]').value;
-    const horaSaida = linha.querySelector('input[id="dataHoraSaidaInput"]').value;
-    
+    let linhaRegistrar = button.closest('tr'); // Linha do botão Registrar
+    let linhaSaida = linhaRegistrar.previousElementSibling; // Linha de saída
+    let linhaEntrada = linhaSaida.previousElementSibling; // Linha de entrada
+    let linhaInfo = linhaEntrada.previousElementSibling; // Linha de informações do carro
+
+    // Coleta os dados do carro
+    const nome = linhaInfo.querySelector('td:nth-child(1)').textContent;
+    const marca = linhaInfo.querySelector('td:nth-child(2)').textContent;
+    const matricula = linhaInfo.querySelector('td:nth-child(3)').textContent;
+    const cor = linhaInfo.querySelector('td:nth-child(4)').textContent;
+
+    // Captura os valores de entrada e saída
+    const horaEntrada = linhaEntrada.querySelector('.dataHoraEntradaInput').value;
+    const horaSaida = linhaSaida.querySelector('.dataHoraSaidaInput').value;
+
     // Objeto de registro
     const registro = {
         nome,
@@ -93,14 +111,17 @@ function registrar(button) {
         horaEntrada,
         horaSaida
     };
-    
-    // Armazenar o registro em localStorage
+
+    // Armazena no localStorage
     let registros = JSON.parse(localStorage.getItem('tabelaRegistros')) || [];
     registros.push(registro);
     localStorage.setItem('tabelaRegistros', JSON.stringify(registros));
-    
+
     alert('Registro salvo com sucesso!');
-    
-    // Remove a linha de cadastro
-    linha.remove();
+
+    // Remove todas as linhas relacionadas ao carro registrado
+    linhaInfo.remove();
+    linhaEntrada.remove();
+    linhaSaida.remove();
+    linhaRegistrar.remove();
 }
