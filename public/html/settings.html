@@ -18,19 +18,27 @@
         <a class="hamburger" href="gestão.html">☰</a>
     </header>
 
-    <body>
-        <h2>Importar Dados para o Go Park</h2> <br>
-        <input type="file" id="fileInput" accept=".json"><br>
-        <button onclick="importarDados()">Carregar Dados</button>
+    <div class="formconteiner">
 
-        <script src="importar.js"></script>
-        <script src="../js/index.js"></script>
-        <script src="../js/script.js"></script>
-        <script src="../js/exibir-utente.js"></script>
-        <script src="../js/gestão.js"></script>
-        <script src="../js/consultar.js"></script>
-        <script src="../js/visitente.js"></script>
-        <script src="../js/registros.js"></script>
-    </body>
+        <body>
+            <div class="setting-form">
+                <h2>atualizar</h2> <br>
+                <label class="custom-file-label" for="fileInput">Selecionar Arquivo</label>
+                <input type="file" class="file-input" id="fileInput" accept=".json">
+                <button onclick="importarDados()">Carregar Dados</button>
+
+            </div>
+        </body>
+
+        
+    </div>
+    <script src="../js/importar.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/exibir-utente.js"></script>
+    <script src="../js/gestão.js"></script>
+    <script src="../js/consultar.js"></script>
+    <script src="../js/visitente.js"></script>
+    <script src="../js/registros.js"></script>
 
 </html>
