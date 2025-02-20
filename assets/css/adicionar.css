@@ -25,3 +25,8 @@
     background-image: url(../../img/visitante.png);
     background-size: cover;
 }
+
+.settings{
+    background-image: url(../../img/settings.png);
+    background-size: cover;
+}
