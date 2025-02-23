@@ -1,27 +1,25 @@
 function registrarVisitante() {
-    const nome = document.getElementById("nome").value;
-    const marcaVeiculo = document.getElementById("marcaVeiculo").value;
-    const modelo = document.getElementById("modelo").value;
-    const matricula = document.getElementById("matricula").value;
-    const cor = document.getElementById("cor").value;
-    const telemovel = document.getElementById("telemovel").value;
-    const email = document.getElementById("email").value;
-    const motivoVisita = document.getElementById("motivoVisita").value;
-    const horaEntrada = document.getElementById("horaEntrada").value;
-    const autorizacao = document.getElementById("autorizacao").value;
+    let visitantes = JSON.parse(localStorage.getItem("visitantes")) || []; // Obtém os visitantes já salvos
 
-    if (!nome || !marcaVeiculo || !modelo || !matricula || !cor || !telemovel || !email || !motivoVisita || !horaEntrada || !autorizacao) {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
+    let visitante = {
+        nome: document.getElementById("nome").value,
+        marcaVeiculo: document.getElementById("marcaVeiculo").value,
+        modelo: document.getElementById("modelo").value,
+        matricula: document.getElementById("matricula").value,
+        cor: document.getElementById("cor").value,
+        telemovel: document.getElementById("telemovel").value,
+        email: document.getElementById("email").value,
+        motivoVisita: document.getElementById("motivoVisita").value,
+        horaEntrada: document.getElementById("horaEntrada").value,
+        autorizacao: document.getElementById("autorizacao").value,
+        data: new Date().toLocaleDateString("pt-BR") // Adiciona a data atual
+    };
 
-    const visitante = { nome, marcaVeiculo, modelo, matricula, cor, telemovel, email, motivoVisita, horaEntrada, autorizacao };
-
-    let visitantes = JSON.parse(localStorage.getItem("visitantes")) || [];
-    visitantes.push(visitante);
-    localStorage.setItem("visitantes", JSON.stringify(visitantes));
+    visitantes.push(visitante); // Adiciona à lista
+    localStorage.setItem("visitantes", JSON.stringify(visitantes)); // Salva no localStorage
 
     alert("Visitante registrado com sucesso!");
 
+    // Limpa o formulário
     document.getElementById("formVisitante").reset();
-}
+} 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ver pagamentos</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #lista-utentes {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: baseline;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .card-utente {
+        background: #f1f1f1;
+        padding: 1px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+        text-align: center;
+    }
+
+    .detalhes {
+        margin-top: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+
+<body>
+
+    <header>
+        <a href="../../index.html">
+            <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
+        </a>
+        <a class="hamburger" href="gestão.html">☰</a>
+    </header>
+    <div class="formconteiner">
+        <h2>Pagamentos</h2>
+<!-- Seleção de Ano -->
+<select id="anoFiltro" class="shearch">
+    <option value="">Escolha o ano</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+    <option value="2027">2027</option>
+    <option value="2028">2028</option>
+    <option value="2029">2029</option>
+    <option value="2030">2030</option>
+</select>
+
+
+        <!-- Barra de Pesquisa -->
+        <input type="text" id="searchInput" placeholder="pesquisar pagamentos..." class="shearch">
+        <div id="lista-utentes"></div>
+
+
+
+    </div>
+    <script src="../js/gerir-pagamentos.js" defer></script>
+    <script src="../js/ver-pagamentos.js"></script>
+</body>
+
+</html>

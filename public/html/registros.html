@@ -1,11 +1,16 @@
-<!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registros de Estacionamento</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
+
+    <!-- Biblioteca para exportar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Biblioteca para exportar Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -17,31 +22,19 @@
     </header>
 
     <h1>Registros de Estacionamento</h1>
+    <input type="text" id="pesquisa" placeholder="Buscar registros..." class="shearch">
 
-    <table id="tabelaRegistros">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Marca</th>
-                <th>Matrícula</th>
-                <th>Cor</th>
-                <th>Data e Hora de Entrada</th>
-                <th>Data e Hora de Saída</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Os dados dos registros serão inseridos dinamicamente aqui -->
-        </tbody>
-    </table>
+    <div id="containerRegistros" class="cards-container"></div>
 
-    <button id="exportarPDF">Exportar para PDF</button>
-    <button id="limparRegistros">Limpar Registros</button>
+    <button id="exportar">Exportar</button>
+    <ul id="opcoesExportacao" class="hidden">
+        <li><button id="exportarPDF" class="btn">Exportar para PDF</button></li>
+        <li><button id="exportarExcel" class="btn">Exportar para Excel</button></li>
+    </ul>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <!-- Botão para apagar todos os registros -->
+    <button id="apagarTodos" class="btn-apagar">Apagar Todos</button>
 
     <script src="../js/registros.js"></script>
 </body>
-
 </html>

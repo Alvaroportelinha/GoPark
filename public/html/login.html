@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="../../index.html">
+            <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
+        </a>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Entrar</button>
+                <p id="erroMensagem" style="color: red; display: none;">Usuário ou senha inválidos!</p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("username").value;
+            const senha = document.getElementById("password").value;
+
+            // Defina as credenciais de acesso
+            const usuarioValido = "admin";
+            const senhaValida = "12345";
+
+            // Verificação simples de login
+            if (usuario === usuarioValido && senha === senhaValida) {
+                // Redireciona para a página de "gerir-pagamentos"
+                window.location.href = "gerir-pagamentos.html";
+            } else {
+                document.getElementById("erroMensagem").style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

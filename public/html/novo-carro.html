@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVO CARRO</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+
+<header>
+    <a href="../../index.html">
+        <img src="../../assets/img/logo_cosap_1.png" alt="Logo" class="logo">
+    </a>
+    <a class="hamburger" href="gestão.html">☰</a>
+</header>
+
+<main>
+    <div class="formconteiner">
+        <h3>Novo Carro</h3>
+        <form id="form-novocarro" class="form-carro formadd">
+            <!-- Seleção de utente -->
+            <label for="utente">Selecionar Utente:</label>
+            <select id="utente" required class="shearch">
+                <option value="">Escolha um utente</option>
+            </select><br>
+
+            <!-- Seleção de marca -->
+            <label for="inputMarca">Marca do Carro:</label>
+            <select id="inputMarca" class="selection">
+                <option value="alfa-romeo">Alfa Romeo</option>
+                <option value="audi">Audi</option>
+                <option value="bmw">BMW</option>
+                <option value="citroen">Citroën</option>
+                <option value="chevrolet">Chevrolet</option>
+                <option value="dacia">Dacia</option>
+                <option value="fiat">Fiat</option>
+                <option value="ford">Ford</option>
+                <option value="honda">Honda</option>
+                <option value="hyundai">Hyundai</option>
+                <option value="jeep">Jeep</option>
+                <option value="kia">Kia</option>
+                <option value="land-rover">Land Rover</option>
+                <option value="lexus">Lexus</option>
+                <option value="mazda">Mazda</option>
+                <option value="mercedes-benz">Mercedes-Benz</option>
+                <option value="mini">Mini</option>
+                <option value="mitsubishi">Mitsubishi</option>
+                <option value="nissan">Nissan</option>
+                <option value="opel">Opel</option>
+                <option value="peugeot">Peugeot</option>
+                <option value="porsche">Porsche</option>
+                <option value="renault">Renault</option>
+                <option value="seat">SEAT</option>
+                <option value="skoda">Skoda</option>
+                <option value="suzuki">Suzuki</option>
+                <option value="tesla">Tesla</option>
+                <option value="toyota">Toyota</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="volvo">Volvo</option>
+                <option value="outro">Outro</option>
+            </select><br>
+
+            <input type="text" id="modelo" placeholder="Modelo" required><br>
+            <input type="text" id="matricula" placeholder="Matrícula" required><br>
+            <input type="text" id="cor" placeholder="Cor"><br>
+            <button type="button" onclick="registrarCarro()">Adicionar</button>
+        </form>
+    </div>
+</main>
+
+<script src="../js/novo-carro.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atualizar pagamentos</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+
+
+    <header>
+        <a href="../../index.html">
+            <img src="../../img/logo_cosap_1.png" alt="Logo" class="logo">
+        </a>
+        <a class="hamburger" href="gestão.html">☰</a>
+    </header>
+
+    <div class="formconteiner">
+
+        <body>
+            
+            <div class="formconteiner">
+                <div class="setting-form">
+                    <h2>Atualizar <br> pagamentos</h2><br>
+                    <label class="custom-file-label" for="fileInput">Selecionar Arquivo</label>
+                    <input type="file" class="file-input" id="fileInput" accept=".json">
+                    <button onclick="importarPagamentos()">Carregar Pagamentos</button>
+                    <button onclick="exportarPagamentos()">Exportar Pagamentos</button>
+                    <script src="../js/atualizar-pagamentos.js"></script>
+                    
+                </div>
+            </div>
+        </body>
+    </div>
+
+</html>

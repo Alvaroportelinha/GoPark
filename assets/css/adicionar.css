@@ -30,3 +30,33 @@
     background-image: url(../../img/settings.png);
     background-size: cover;
 }
+
+.ver-pagamentos{
+    background-image: url(../../img/ver-pagamentos.png);
+    background-size: cover;
+}
+
+.gerir-pagamentos{
+    background-image: url(../../img/gerir-pagamentos.png);
+    background-size: cover;
+}
+.update{    background-image: url(../../img/update.png);
+    background-size: cover;
+}
+.remove{    background-image: url(../../img/remove-user.png);
+    background-size: cover;
+}
+.update-user{    background-image: url(../../img/update-user.png);
+    background-size: cover;
+}
+.update-pay{    background-image: url(../../img/update-pay.png);
+    background-size: cover;
+}
+.adicionar-pagamentos{    background-image: url(../../img/adicionar-pagamentos.png);
+    background-size: cover;
+}
+.eraser{    background-image: url(../../img/eraser.png);
+    background-size: cover;
+}
+.update-car{    background-image: url(../../img/update-car.png);
+    background-size: cover;}
