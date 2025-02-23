@@ -186,3 +186,58 @@ function registrar(button) {
     alert('Registro salvo com sucesso!');
     card.remove(); // Remove o card após registro
 }
+function pesquisarCarros() {
+    const termo = document.getElementById('searchInput').value.toLowerCase();
+    const container = document.getElementById('carrosContainer');
+    container.innerHTML = ''; // Limpa os cards anteriores
+
+    // Recupera os utentes do localStorage
+    const utentes = JSON.parse(localStorage.getItem("utentes")) || [];
+
+    // Filtra os carros de todos os utentes que correspondem ao termo de pesquisa
+    let carrosFiltrados = [];
+    utentes.forEach(utente => {
+        utente.carros.forEach(carro => {
+            // Verifica se o termo de pesquisa está presente no nome, marca, matrícula ou cor
+            if (
+                utente.nome.toLowerCase().includes(termo) ||
+                carro.marca.toLowerCase().includes(termo) ||
+                carro.matricula.toLowerCase().includes(termo) ||
+                carro.cor.toLowerCase().includes(termo)
+            ) {
+                carro.nome = utente.nome;
+                carrosFiltrados.push(carro);
+            }
+        });
+    });
+
+    if (carrosFiltrados.length > 0) {
+        carrosFiltrados.sort((a, b) => a.matricula.localeCompare(b.matricula));
+
+        carrosFiltrados.forEach(carro => {
+            const card = document.createElement('div');
+            card.classList.add('carro-card');
+
+            card.innerHTML = `
+                <h3>${carro.nome}</h3>
+                <p><strong>Marca:</strong> ${carro.marca}</p>
+                <p><strong>Matrícula:</strong> ${carro.matricula}</p>
+                <p><strong>Cor:</strong> ${carro.cor}</p>
+                <div class="actions">
+                    <button onclick="setDataHoraEntrada(this)">Entrou</button>
+                    <input type="datetime-local" class="dataHoraEntradaInput">
+                </div>
+                <div class="actions">
+                    <button onclick="setDataHoraSaida(this)">Saiu</button>
+                    <input type="datetime-local" class="dataHoraSaidaInput">
+                </div>
+                <button class="registrar-btn" onclick="registrar(this)">Registrar</button>
+            `;
+
+            container.appendChild(card);
+        });
+    } else {
+        // Exibe uma mensagem se nenhum carro for encontrado
+        container.innerHTML = '<p>Nenhum carro encontrado.</p>';
+    }
+}
