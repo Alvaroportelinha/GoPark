@@ -6,44 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visitantes Registrados</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
+
 <style>
     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-}
-
-
-.card-visitante {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #ff2600;
-    margin-top: 8px;
-}
-
-.card-visitante h3 {
-    margin: 0;
-    color: #333;
-}
-
-.card-visitante p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #555;
-}
-
-/* Responsivo */
-@media screen and (max-width: 600px) {
-    .card-visitante {
-        padding: 10px;
-        font-size: 12px;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
     }
-}
 
+    .card-visitante {
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid #ff2600;
+        margin-top: 8px;
+    }
+
+    .card-visitante h3 {
+        margin: 0;
+        color: #333;
+    }
+
+    .card-visitante p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .export-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .export-button {
+        background: #fddb17;
+        color: rgb(0, 0, 0);
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+
+    .export-menu {
+        display: none;
+        position: absolute;
+        background: rgb(220, 34, 34);
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        min-width: 150px;
+        z-index: 10;
+    }
+
+    .export-menu button {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .export-menu button:hover {
+        background: #ff2929;
+    }
+
+    /* Responsivo */
+    @media screen and (max-width: 600px) {
+        .card-visitante {
+            padding: 10px;
+            font-size: 12px;
+        }
+    }
 </style>
 
 <body>
@@ -57,23 +98,26 @@
 
     <main>
         <h2>Lista de Visitantes</h2>
-        <div id="listaVisitantes" class="lista-visitantes">
-            <!-- Visitantes serão inseridos aqui -->
-        </div>
-        <button onclick="apagarTodos()">Apagar Todos</button>
-    </main>
 
-    <script src="../js/importar.js"></script>
-    <script src="../js/index.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/exibir-utente.js"></script>
-    <script src="../js/gestão.js"></script>
-    <script src="../js/consultar.js"></script>
-    <script src="../js/visitente.js"></script>
-    <script src="../js/registros.js"></script>
-    <script src="../js/novo-carro-js"></script>
-    <script src="../js/novo-utente.js"></script>
+        <!-- Botão de Exportação -->
+
+        </div>
+
+        <div id="listaVisitantes" class="lista-visitantes"></div>
+
+
+    </main>
+    <div class="export-container">
+        <button class="export-button" onclick="toggleExportMenu()">Exportar</button>
+        <div class="export-menu" id="exportMenu">
+            <button onclick="exportarPDF()">Exportar para PDF</button>
+            <button onclick="exportarExcel()">Exportar para Excel</button>
+        </div>
+    </div>
+    <button onclick="apagarTodos()">Apagar Todos</button>
+
     <script src="../js/listar-visitantes.js"></script>
 
 </body>
+
 </html>
