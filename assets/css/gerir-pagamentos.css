@@ -1,4 +1,5 @@
 .switch-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -43,7 +44,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #f61408e0;
     transition: .4s;
     border-radius: 20px;
 }

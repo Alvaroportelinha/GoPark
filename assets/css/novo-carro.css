@@ -1,0 +1,15 @@
+.formconteiner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;    
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.284);
+    border-radius: 8px;
+    width: auto;
+    padding: 10px;
+}
+
+h3{
+    margin-top: 18px;
+}

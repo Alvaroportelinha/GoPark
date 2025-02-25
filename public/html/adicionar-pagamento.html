@@ -17,15 +17,15 @@
         <a class="hamburger" href="gestão.html">☰</a>
     </header>
 
-    <div class="formconteiner">
+    <div class="gestaoconteiner">
         <main>
             <div class="formcontainer">
-                <h3>Pagamentos</h3>
-                <form id="form-pagamentos" class="form-pagamentos formadd">
+                <h3>Novo Pagamento</h3>
+                <form id="form-pagamentos" class="formadd">
                     <!-- Seleção de utente -->
-                    <label for="utente">Selecionar Utente:</label>
+               
                     <select id="utente" required class="shearch">
-                        <option value="">Escolha um utente</option>
+                        <option value="" class="select-pagamentos">Escolha um utente</option>
                     </select><br>
 
                     <!-- Seleção de ano -->
@@ -41,95 +41,97 @@
                     </select><br>
 
                     <!-- Seleção de meses com switches -->
-                    <label>Selecione os meses pagos:</label>
-                    <div class="switch-container">
-                        <div class="switch-item">
-                            <span class="switch-label">Janeiro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="janeiro" value="janeiro">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Fevereiro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="fevereiro" value="fevereiro">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Março</span>
-                            <label class="switch">
-                                <input type="checkbox" id="marco" value="marco">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Abril</span>
-                            <label class="switch">
-                                <input type="checkbox" id="abril" value="abril">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Maio</span>
-                            <label class="switch">
-                                <input type="checkbox" id="maio" value="maio">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Junho</span>
-                            <label class="switch">
-                                <input type="checkbox" id="junho" value="junho">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Julho</span>
-                            <label class="switch">
-                                <input type="checkbox" id="julho" value="julho">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Agosto</span>
-                            <label class="switch">
-                                <input type="checkbox" id="agosto" value="agosto">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Setembro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="setembro" value="setembro">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Outubro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="outubro" value="outubro">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Novembro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="novembro" value="novembro">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="switch-item">
-                            <span class="switch-label">Dezembro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="dezembro" value="dezembro">
-                                <span class="slider"></span>
-                            </label>
+                    <div class="seletion">
+                        <label>Selecione os meses pagos:</label>
+                        <div class="switch-container">
+                            <div class="switch-item">
+                                <span class="switch-label">Janeiro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="janeiro" value="janeiro">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Fevereiro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="fevereiro" value="fevereiro">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Março</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="marco" value="marco">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Abril</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="abril" value="abril">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Maio</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="maio" value="maio">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Junho</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="junho" value="junho">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Julho</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="julho" value="julho">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Agosto</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="agosto" value="agosto">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Setembro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="setembro" value="setembro">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Outubro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="outubro" value="outubro">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Novembro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="novembro" value="novembro">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="switch-item">
+                                <span class="switch-label">Dezembro</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="dezembro" value="dezembro">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
 
-                    <button type="submit">Salvar</button>
+                    <button type="submit" style="margin: 30px;">Salvar</button>
                 </form>
             </div>
         </main>
