@@ -52,8 +52,8 @@ E aparecerá o carro cadastrado no nosso index assim que clicar-mos na imagem da
 
 
 ## 📞 **Contato**  
-
+📧 Para dúvidas ou suporte, entre em contato comigo.
 alvaroportelinha@gmail.com
-📧 Para dúvidas ou suporte, entre em contato com a equipe de desenvolvimento.  
+
 
 🚘 **Go Park - Estacionamento Inteligente para a Comunidade Escolar** 🚦
