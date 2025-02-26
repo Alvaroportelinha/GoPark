@@ -13,18 +13,22 @@ O sistema permite o registro de entradas e saídas de veículos e de visitantes,
 
 ## 🛠️ **Tecnologias Utilizadas**  
 - **Frontend:** HTML, CSS, JavaScript
-- 
 ## 🚀 **Como Executar o Projeto**  
 
-
+O Index.html utiliza imagens de marcas de carros para ser mais fácil o reconhecimento das viaturas
 ![image](https://github.com/user-attachments/assets/0122090f-53b4-473a-b252-44dbb6c05215)
 ![image](https://github.com/user-attachments/assets/6a8de33d-a357-4f66-9d57-840d7a46dd34)
-![image](https://github.com/user-attachments/assets/9a195136-3cbb-4b3c-892c-9109ca0b900d)
+![image](https://github.com/user-attachments/assets/9a195136-3cbb-4b3c-892c-9109ca0b900d)cb9276bf-a07b-4fac-8fb3-6c91c00733d3)
+![image](https://github.com/user-attachments/assets/00507628-4393-4d50-aadb-a95ccabaaaef)
+
 ![image](https://github.com/user-attachments/assets/9e199d58-9a40-4783-91e4-0b23f44bf08d)
 
 ![image](https://github.com/user-attachments/assets/9391ce53-6644-4e52-b619-018f1a4e9594)
+![image](https://github.com/user-attachments/assets/2162ee82-1957-4b71-a003-e12568433568)
+
 ![image](https://github.com/user-attachments/assets/4d1c7bad-e2c0-4f19-9d70-92a80dd565c4)
 
+![Screenshot From 2025-02-26 19-04-47](https://github.com/user-attachments/assets/ea35aa59-6aa6-4994-a996-481ebbdb5dc8)
 
 
 
