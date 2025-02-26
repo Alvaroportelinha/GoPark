@@ -1,47 +1,48 @@
-# Go Park - Estacionamento Escolar Sebastião da Gama
+# **Go Park - Estacionamento Escolar Sebastião da Gama** 🚗🏫
 
-Bem-vindo ao **Go Park**, a plataforma digital de gestão de estacionamento escolar da **Escola Sebastião da Gama**. O sistema permite a gestão eficiente de vagas, controle de acesso de veículos e registro de visitantes.
+**Go Park** é uma plataforma digital que surgiu na necessidade da gestão do estacionamento escolar do parque de estacionamento da **Escola Sebastião da Gama**. em Setúbal.
+O sistema permite o registro de entradas e saídas de veículos e de visitantes, o que garante mais organização e segurança.
 
-## 🔗 Acesso ao Sistema
-O sistema pode ser acessado através do domínio:
-https://alvaroportelinha.github.io/sistema/
+## 🔗 **Acesso ao Sistema**  
+🔗 [Go Park - Versão Online](https://alvaroportelinha.github.io/GoPark/)
 
+## 📌 **Funcionalidades**  
+✅ **Cadastrar e remover veículos e utentes**
+✅ **Registro de visitantes** – Acompanhe veículos não cadastrados.  
+✅ **Painel de administração** – Visão geral com estatísticas e relatórios.  
 
-## 📌 Funcionalidades
-
-- 🚗 Cadastro e remoção de veículos autorizados.
-- 🛑 Controle de entrada e saída.
-- 📋 Registo de visitantes.
-- 📊 Painel de administração para monitoramento em tempo real.
-
-## 🛠️ Tecnologias Utilizadas
-
+## 🛠️ **Tecnologias Utilizadas**  
 - **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js
-- **Banco de Dados:** [Especificar banco de dados, se houver]
-- **Servidor:** Ubuntu 24
+- 
+## 🚀 **Como Executar o Projeto**  
 
-## 🚀 Como Executar o Projeto
+![image](https://github.com/user-attachments/assets/cb9276bf-a07b-4fac-8fb3-6c91c00733d3)
 
-### 1️⃣ Clonar o Repositório
+
+### 1️⃣ **Clonar o Repositório**  
 ```bash
- git clone https://github.com/seuusuario/go-park.git
+git clone https://github.com/seuusuario/go-park.git
 ```
 
-### 2️⃣ Instalar Dependências
+### 2️⃣ **Acessar a Pasta do Projeto**  
 ```bash
- cd go-park
- npm install
+cd go-park
 ```
 
-### 3️⃣ Iniciar o Servidor
+### 3️⃣ **Instalar Dependências**  
 ```bash
- npm start
+npm install
 ```
 
+### 4️⃣ **Iniciar o Servidor**  
+```bash
+npm start
+```
 
-## 📞 Contato
-Para dúvidas ou suporte, entre em contato com a equipe de desenvolvimento.
+## 🖼️ **Demonstração**  
+_(Adicione aqui prints da interface ou um GIF mostrando o funcionamento do sistema)_  
 
----
-**Go Park - Estacionamento Inteligente para a Comunidade Escolar** 🚘
+## 📞 **Contato**  
+📧 Para dúvidas ou suporte, entre em contato com a equipe de desenvolvimento.  
+
+🚘 **Go Park - Estacionamento Inteligente para a Comunidade Escolar** 🚦
