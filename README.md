@@ -31,18 +31,28 @@ E aparecerá o carro cadastrado no nosso index assim que clicar-mos na imagem da
 
 
 ## 🖼️ **Demonstração**  
-![image](https://github.com/user-attachments/assets/0122090f-53b4-473a-b252-44dbb6c05215)
-![image](https://github.com/user-attachments/assets/6a8de33d-a357-4f66-9d57-840d7a46dd34)
-![image](https://github.com/user-attachments/assets/9a195136-3cbb-4b3c-892c-9109ca0b900d)
-![image](https://github.com/user-attachments/assets/9391ce53-6644-4e52-b619-018f1a4e9594)
-![image](https://github.com/user-attachments/assets/00507628-4393-4d50-aadb-a95ccabaaaef)
-![image](https://github.com/user-attachments/assets/9e199d58-9a40-4783-91e4-0b23f44bf08d)
-![image](https://github.com/user-attachments/assets/4d1c7bad-e2c0-4f19-9d70-92a80dd565c4)
-![image](https://github.com/user-attachments/assets/cb63f1ca-3c6e-4c4f-b2f9-a9773b7d966e)
+![image](https://github.com/user-attachments/assets/d5b7fbe1-5bd1-4042-90a8-48793d1c3f7e)
+![image](https://github.com/user-attachments/assets/2303c20b-2338-4fc9-a29a-c706ca6cd167)
+![image](https://github.com/user-attachments/assets/166d2669-ce9e-4cc4-acdf-112ba4f0af0b)
+![image](https://github.com/user-attachments/assets/ecf43907-e41e-42fd-a9e0-aca3e53fdb6a)
+![image](https://github.com/user-attachments/assets/31231638-5fe1-4dd8-8931-364276732db5)
+![image](https://github.com/user-attachments/assets/c870535b-8b1e-4e93-bc4c-b9de392d1ac4)
+![image](https://github.com/user-attachments/assets/ca78f317-2bae-4700-8cca-4e96ea31e64a)
+![image](https://github.com/user-attachments/assets/9a6f0605-8284-4c0e-8567-6c33c7eebf1a)
+![image](https://github.com/user-attachments/assets/dacfc6b0-1b46-4ed8-88e8-45ead14a70e7)
+![image](https://github.com/user-attachments/assets/badfc640-aaf6-4ebc-ab5e-7e6f877914ff)
 
-![image](https://github.com/user-attachments/assets/2162ee82-1957-4b71-a003-e12568433568)
+
+
+
+
+
+
+
+
 
 ## 📞 **Contato**  
+
 alvaroportelinha@gmail.com
 📧 Para dúvidas ou suporte, entre em contato com a equipe de desenvolvimento.  
 
