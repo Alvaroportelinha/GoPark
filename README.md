@@ -1,6 +1,6 @@
 # **Go Park - Estacionamento Escolar Sebastião da Gama** 🚗🏫
 
-**Go Park** é uma plataforma digital que surgiu na necessidade da gestão do estacionamento escolar do parque de estacionamento da **Escola Sebastião da Gama**. em Setúbal.
+**Go Park** é uma plataforma digital que surgiu na necessidade da gestão do estacionamento escolar do parque de estacionamento da **Escola Sebastião da Gama** em Setúbal
 O sistema permite o registro de entradas e saídas de veículos e de visitantes, o que garante mais organização e segurança.
 
 ## 🔗 **Acesso ao Sistema**  
