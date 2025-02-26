@@ -7,9 +7,10 @@ O sistema permite o registro de entradas e saídas de veículos e de visitantes,
 🔗 [Go Park - Versão Online](https://alvaroportelinha.github.io/GoPark/)
 
 ## 📌 **Funcionalidades**  
-✅ **Cadastrar e remover veículos e utentes**
-✅ **Registro de visitantes** – Acompanhe veículos não cadastrados.  
-✅ **Painel de administração** – Visão geral com estatísticas e relatórios.  
+- 🚗 Cadastro e remoção de veículos autorizados.
+- 🛑 Controle de entrada e saída.
+- 📋 Registo de visitantes.
+- 📊 Painel de administração para monitoramento em tempo real.
 
 ## 🛠️ **Tecnologias Utilizadas**  
 - **Frontend:** HTML, CSS, JavaScript
